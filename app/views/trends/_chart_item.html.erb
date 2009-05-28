@@ -1,0 +1,5 @@
+<li>
+    <%= link_to chart_item.name, tag_path(chart_item, :context => @context) %> 
+    <span class="count"><%= chart_item.popularity %></span>
+    <span class="index" style="width: <%= ((chart_item.popularity.to_f/@total.to_f) * 300).to_i %>%">(<%= ((chart_item.popularity.to_f/@total.to_f) * 100).to_i %>%)</span>
+  </li>

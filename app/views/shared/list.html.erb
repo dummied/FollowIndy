@@ -1,0 +1,38 @@
+<%= render :partial => "static/header" %>
+<div id="main_well" class="span-17">
+<% unless @page_title.blank? %>
+<h2><%= @page_title %></h2>    
+<% end %>  
+<%= render :partial => "shared/searchbox" %> 
+<div class="digg_pagination">
+<%= will_paginate(@things) %>
+</div>    
+<% if @things.blank? %>
+<p class="no_results">There are no results.</p>
+<% else %>
+<% current_source = @things.first.source %>     
+<dl id="things">          
+  <dt class="<%= current_source %>"><%= make_title(current_source) %></dt>
+<% @things.each do |t| %>    
+<% if t.source != current_source %>
+<% current_source = t.source %>
+ <dt class="<%= current_source %>"><%= make_title(current_source) %></dt>
+<% end %>
+<dd class="thing <%= t.source %> clearfix" id="thing_<%= t.id %>">
+<%= render :partial => "shared/#{t.partial}", :locals => {:thing => t} %> 
+</dd>
+<% end %>
+</dl>   
+<% end %>
+
+
+
+
+
+
+<div class="digg_pagination">
+<%= will_paginate(@things) %>
+</div>  
+
+</div>
+<%= render :partial => "static/rail" %>

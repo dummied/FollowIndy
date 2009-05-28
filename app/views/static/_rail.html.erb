@@ -1,0 +1,19 @@
+<div id="info_rail" class="span-5 prepend-1">
+  <h6>About</h6>
+  <p>FollowIndy is an aggregate picture of what's being written about by Indianapolis-area news organizations and individuals.</p>
+  <p>It attempts to find and organize everything so users can try to discover patterns in news coverage and public attention of particular topics.</p>
+  <p><%= link_to "Chris Vannoy", "http://chrisvannoy.com" %> is the (lack of) brains behind this project, and while he is employed by <%= link_to "The Indianapolis Star", "http://www.indystar.com" %>, this site is in (absolutely) no way endorsed, directed or supported by his employer.</p>
+  <p>All content is copyright of its original owner and FollowIndy makes no claim to ownership of any of said content.</p>    
+  <p>FollowIndy displays only information that is available through public APIs or RSS feeds. if you represent a content owner and would not like your content to appear here, <%= mail_to "chris@followindy.com", "contact us", :subject => "Hey, I don't want my stuff on FollowIndy.com!" %> and we'll get it removed.</p>  
+  <p>You can find out still more information about FollowIndy on <%= link_to "its blog", "http://blog.followindy.com/" %> or via <a href="http://twitter.com/FollowIndy">Twitter</a>.</p>
+   <% unless defined?(short)%>
+  <h6>More sources</h6>
+  <p>Know of a good Indianapolis news source FollowIndy's not discovering and including?</p>                              
+  <p><%= mail_to "chris@followindy.com", "Shoot Chris an email with the info", :subject => "Hey, you're missing a source on FollowIndy.com!" %> and he'll try to get it added in.</p>
+  
+  <h6>API</h6>
+  <p>Since FollowIndy relies so much on RSS feeds and APIs of others, it only make sense that it would have an API of its own.</p>
+  <p>Every action on the site (even search), has three additional representations to the web page you're viewing: Atom, JSON and XML. Just add the corresponding extension (.atom, .js or .xml) to any url to get an idea of what you'll get back.</p>
+  <p>There is no rate limit or throttling, but please, don't go overboard (paying for hosting out of my own pocket).</p>  
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+FeedDetect
+==========
+
+This plugin intends to find those controller actions that respond_to atom or rss formats and adds a @feed_url variable to each call with the url to said feed.
+
+It also has a +feed_tag+ view helper that will automatically stick in an auto discovery link if @feed_url is defined.
+
+
+Copyright (c) 2009 Chris Vannoy, released under the MIT license

@@ -1,0 +1,5 @@
+<a href="<%= thing.link %>" class="avatar"><img src="<%= thing.data[:square_thumb_url] %>" /></a>     
+<h6><%= link_to thing.title, thing.link %></h6>
+
+<p class="summary"><%= thing.data[:user_name] %>: <%= auto_link(thing.summary) %></p>
+<p class="meta">Added <%= time_ago_in_words(thing.created_at) %> ago. <% unless thing.tags.blank? %>Tagged: <%= thing.tags.collect{|u| link_to u.name, tag_path(u)}.to_sentence %><% end %></p>

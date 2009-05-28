@@ -1,0 +1,10 @@
+<blockquote>    
+  <span>  
+  <% if quote.thing.blank? %>
+   <%= quote.body %>
+  <% else %>
+  <%= link_to quote.body, quote.thing.link %> 
+  <% end %>  
+  </span>
+</blockquote>
+<cite>Said by or about <%= quote.quoted %>. <% unless quote.thing.blank? %>Source: <%= link_to awesome_truncate(quote.thing.title, 15), quote.thing.link %> / <%= link_to make_title(quote.thing.source), things_url(:subdomain => quote.thing.source) %><% end %></cite>

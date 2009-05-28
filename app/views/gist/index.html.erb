@@ -1,0 +1,31 @@
+<%= render :partial => "static/header" %>
+<div id="main_well" class="span-17">
+<% unless @page_title.blank? %>
+<h2><%= @page_title %></h2>    
+<% end %>  
+<div class="digg_pagination">
+<%= will_paginate(@quotes) %>
+</div>    
+<% current_date = @quotes.first.created_at.to_date %>     
+<dl id="things">          
+  <dt><%= current_date.to_s %></dt>
+<% @quotes.each do |t| %>    
+<% if t.created_at.to_date != current_date %>
+<% current_date = t.created_at.to_date %>
+ <dt><%= current_date.to_s %></dt>
+<% end %>
+<dd class="quote clearfix" id="quote_<%= t.id %>">
+<%= render :partial => "shared/quote", :locals => {:quote => t} %> 
+</dd>
+<% end %>
+</dl>   
+
+
+
+
+<div class="digg_pagination">
+<%= will_paginate(@quotes) %>
+</div>  
+
+</div>
+<%= render :partial => "static/rail" %>
