@@ -1,0 +1,10 @@
+- semantic_form_for(@thing) do |form|
+  - form.inputs :name => "A new thing" do
+    = form.input :title
+    = form.input :summary
+    = form.input :tag_list
+
+  = form.inputs :name, :description, :home_url, :for => :origin, :name => "Source"
+    
+  - form.buttons do
+    = form.commit_button

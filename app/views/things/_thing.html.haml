@@ -1,0 +1,23 @@
+.entry.clearfix
+  .meta
+    %h6
+      %a.favicon{:href => source_path(thing.source)}
+        %img{:src => thing.source.home_url + "/favicon.ico"}
+      Published 
+      = time_ago_in_words(thing.created_at)
+      ago
+    .tag_list
+      = raw(thing.tags.collect{|tag| link_to tag, tag_path(tag)}.to_sentence(:last_word_connector => " and "))
+  .main
+    %h3
+      = link_to raw(thing.title), thing.link
+    %p
+      = raw(awesome_truncate(thing.summary, 400))
+    %ul.meta
+      %li
+        = link_to "Read More", thing.link
+      - unless thing.related_count.to_s == "0"
+        %li
+          = link_to "Related (#{thing.related_count})", thing_path(thing)
+      :javascript
+        instapaper_embed('#{thing.link}', '#{escape_javascript(thing.title)}', '#{escape_javascript(thing.summary)}');

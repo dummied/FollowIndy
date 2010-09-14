@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  source_id: 1
+  title: MyString
+  summary: MyText
+  extended_body: MyText
+  tag_list: MyString
+  link: MyString
+  external_data: MyText
+  delta: false
+
+two:
+  source_id: 1
+  title: MyString
+  summary: MyText
+  extended_body: MyText
+  tag_list: MyString
+  link: MyString
+  external_data: MyText
+  delta: false
