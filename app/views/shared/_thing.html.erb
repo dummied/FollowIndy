@@ -1,3 +1,0 @@
-<h6><%= link_to thing.title, thing.link %></h6>
-<p class="summary"><%= awesome_truncate(strip_tags(thing.summary), 100) %></p>
-<p class="meta">Added <%= time_ago_in_words(thing.created_at) %> ago.<% unless thing.tags.blank? %> Tagged: <%= thing.tags.collect{|u| link_to u.name, tag_path(u)}.to_sentence %><% end %></p>
